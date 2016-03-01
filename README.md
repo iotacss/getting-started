@@ -1,16 +1,14 @@
 # Getting Started with iotaCSS #
 
-This is a detailed documentation with everything you need to know about iotaCSS and how to get started with it.
-
 
 ## What is iotaCSS ##
 
-iotaCSS is a smart and minimalistic CSS Framework built for scale. It's SASS based and follows the BEM Methodology.
+iotaCSS is a smart and minimalistic CSS Framework built for scale. It's [SASS](http://sass-lang.com/) based and follows the [BEM Methodology](https://css-tricks.com/bem-101/).
 
 
 ## Understanding iotaCSS ##
 
-iotaCSS is a set of standalone modules and each one of them has it's own dependencies. Each module can be used as a unit or it can be used together with other modules in order to build more complex features. iotaCSS modules are separated into different categories, which help developers understand what each category is meant for and how it has to be threated by the developer. The main categories are:
+iotaCSS is a set of standalone modules with their individual dependencies. Each module can be used separately or it can be used together with other modules in order to build more complex features. iotaCSS modules are separated into different categories, which help developers understand what each category is meant for and how it has to be treated by the developer. The main categories are:
 
 
 ### Settings ###
@@ -42,32 +40,23 @@ Components are UI elements. They contain cosmetic CSS and they can be directly o
 Utilities are helper classes. They are usually one line of code, like .u-text-right or .u-float-right. iotaCSS provide all the utilities you will ever need. BY default, a utility is prefixed with "u-".
 
 
-Now you understand the architecture behind iotaCSS, let's get started.
-
-
 ## Learn iotaCSS By Example
 
 
 ### Building Tabs
 
-Assuming we need several inline tabs which they take over the 100% of their containers
-
-We will need the modules:
+Assuming we need several inline tabs:
 
 * [Settings.Default](https://github.com/iotacss/settings.default)
 * [Objects.List](https://github.com/iotacss/objects.grid)
 
 ```
-npm install --save iotacss-list
+npm install --save iotacss-default iotacss-list
 ```
 
-*The reason I didn't install also the Settings.Default is because it's a dependency of Objects.List. All modules have their own dependencies installed with them. Please make sure you read their dependencies, so, you know what you have to import in your sass file. Import order of modules follow the order of the categories as mentioned above.*
-
-Back to our example now. Our sass file will look like this:
+Our stylesheet should look like this:
 
 ```sass
-$iota-list--span: true;  // Enable span list in order to have inline elements that take the 100% of their container
-
 @import "node_modules/iotacss-default/settings.default";
 @import "node_modules/iotacss-list/objects.list";
 
@@ -78,7 +67,7 @@ $iota-list--span: true;  // Enable span list in order to have inline elements th
     .c-tab-nav__item {}
 ```
 
-Our HTML will look like:
+Our HTML should look like:
 
 ```html
 <nav class="c-tab-nav">
@@ -99,17 +88,15 @@ Our HTML will look like:
 
 ### Building Comments List
 
-We will need the modules:
-
 * [Settings.Default](https://github.com/iotacss/settings.default)
 * [Tools.Mixin](https://github.com/iotacss/objects.grid)
 * [Objects.Media](https://github.com/iotacss/objects.grid)
 
 ```
-npm install --save iotacss-media
+npm install --save iotacss-default iotacss-mixin iotacss-media
 ```
 
-Our sass will look like:
+Our stylesheet should look like:
 
 ```sass
 @import "node_modules/iotacss-default/settings.default";
@@ -132,7 +119,7 @@ Our sass will look like:
   .c-comment__body {}
 ```
 
-Our HTML will look like:
+Our HTML should look like:
 
 ```html
 <div class="c-comments">
@@ -169,7 +156,7 @@ Our HTML will look like:
 
 ### Building a Responsive Grid
 
-Assuming we will need a 2, 3 and 4 column responsive grid. We will need the modules:
+Assuming we will need a 2, 3 and 4 column responsive grid.
 
 * [Settings.Default](https://github.com/iotacss/settings.default)
 * [Settings.Column](https://github.com/iotacss/settings.column)
@@ -178,10 +165,10 @@ Assuming we will need a 2, 3 and 4 column responsive grid. We will need the modu
 * [Utilities.Size](https://github.com/iotacss/utilities.size)
 
 ```
-npm install --save iotacss-column iotacss-breakpoint iotacss-grid iotacss-size
+npm install --save iotacss-default iotacss-column iotacss-breakpoint iotacss-grid iotacss-size
 ```
 
-Our sass file will look like this:
+Our stylesheet should look like this:
 
 ```sass
 $iota-column-sizes: 2, 3, 4;  // That will create 2, 3 and 4 sizes
@@ -196,7 +183,7 @@ $iota-size--res: true;  // That will enable responsive size utilities based on o
 @import "node_modules/iotacss-size/utilities.size";
 ```
 
-Our HTML will look like
+Our HTML should look like
 
 ```html
 <div class="o-grid">
