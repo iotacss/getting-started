@@ -57,6 +57,8 @@ npm install --save iotacss-default iotacss-list
 Our stylesheet should look like this:
 
 ```sass
+$iota-list--inline: true;
+
 @import "node_modules/iotacss-default/settings.default";
 @import "node_modules/iotacss-list/objects.list";
 
@@ -71,7 +73,7 @@ Our HTML should look like:
 
 ```html
 <nav class="c-tab-nav">
-  <ul class="c-tab-nav__list  o-list  o-list--span">
+  <ul class="c-tab-nav__list  o-list  o-list--inline">
     <li class="c-tab-nav__item  o-list__item">
       <a href="#">Tab 1</a>
     </li>
